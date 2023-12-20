@@ -678,19 +678,23 @@ class FloatingSearchBarState extends ImplicitlyAnimatedWidgetState<
             borderRadius: borderRadius,
             child: child,
           ),
-          child: Container(
-            width: transition.lerpWidth(),
-            height: transition.lerpHeight(),
-            padding: EdgeInsets.only(top: padding.top, bottom: padding.bottom),
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              color: transition.lerpBackgroundColor(),
-              border: Border.fromBorderSide(style.border),
-              borderRadius: borderRadius,
-            ),
-            child: ClipRRect(
-              borderRadius: borderRadius,
-              child: _buildInnerBar(),
+          child: MouseRegion(
+            cursor: SystemMouseCursors.text,
+            child: Container(
+              width: transition.lerpWidth(),
+              height: transition.lerpHeight(),
+              padding:
+                  EdgeInsets.only(top: padding.top, bottom: padding.bottom),
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: transition.lerpBackgroundColor(),
+                border: Border.fromBorderSide(style.border),
+                borderRadius: borderRadius,
+              ),
+              child: ClipRRect(
+                borderRadius: borderRadius,
+                child: _buildInnerBar(),
+              ),
             ),
           ),
         ),
