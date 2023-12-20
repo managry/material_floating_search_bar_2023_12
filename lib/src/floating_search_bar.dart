@@ -911,9 +911,6 @@ class FloatingSearchBarController {
   AnimationController get translateController =>
       _searchBarState!._translateController;
 
-  Animation<double> get translateAnimation =>
-      _searchBarState!._translateAnimation;
-
   /// Opens/Expands the [FloatingSearchBar].
   void open() => _appBarState?.open();
 
